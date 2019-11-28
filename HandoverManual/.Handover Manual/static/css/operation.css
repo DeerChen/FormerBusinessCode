@@ -1,0 +1,126 @@
+@charset "utf-8"
+/* CSS Document */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Comic Sans MS", "Microsoft YaHei";
+    font-size: 14px;
+    background-color: #333333;
+}
+
+ul {
+    background-color: #cccccc;
+    position: absolute;
+    color: #333333;
+}
+
+li.li1, li.li2, li.li3, li.li{
+    text-align: center;
+    width: 160px;
+    height: 25px;
+    line-height: 25px;
+    position: relative;
+}
+
+ul.nav2, ul.nav3 {
+    left: 160px;
+    top: 0;
+    display: none;
+}
+
+li.li1:hover, li.li2:hover, li.li3:hover, li.li:hover {
+    background-color: #dddddd;
+}
+
+.nav1 .li1:hover ul.nav2, .nav2 .li2:hover ul.nav3 {
+    display: block;
+}
+
+a:link, a:visited, a:hover, a:active {
+    color: #333333;
+    text-decoration: none;
+}
+
+div {
+    overflow: auto;
+    font-size: 20px;
+    background-color: #ffffff;
+    min-height: 200px;
+    margin: 14px auto auto 210px;
+}
+
+span {
+    display: none;
+}
+
+div.nav {
+    background-color: #cccccc;
+    font-size: 14px;
+    min-height: auto;
+    width: auto;
+    margin: auto;
+}
+
+ul.nav {
+    list-style-type:none;
+    margin:0;
+    padding:0;
+    position: relative;
+}
+
+li.li {
+    display: inline;
+    width: 80px;
+}
+
+li.li#left {
+    float: left;
+}
+
+li.li#right {
+    float: right;
+}
+
+li.li a {
+    display: block;
+}
+
+p {
+    margin: auto 15px;
+}
+
+img {
+    margin: auto 15px;
+    height: 900px;
+}
+
+em {
+    font-style: normal;
+    color: #995539;
+}
+
+#p0 {
+    display: inline;
+}
+
+table {
+    margin: auto;
+    text-align: center;
+    background-color: #DDDDDD;
+    color: #333333;
+    min-width: 400px;
+}
+
+caption {
+    color: #509CCC;
+}
+
+thead {
+    font-weight: bold;
+    background-color:#AAAAAA;
+}

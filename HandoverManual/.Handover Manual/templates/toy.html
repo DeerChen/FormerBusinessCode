@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>玩具</title>
+        <link type="text/css" rel="stylesheet" href="{{url_for('static', filename='css/toy.css')}}" />
+    </head>
+    <body>
+        <h3>更新商品资料</h3>
+        <p>文件位置：
+            <ol>
+                <li>D:/坚果云/玩具/0-玩具每日销售数据/</li>
+                <li>D:/玩具/</li>
+            </ol>
+        </p>
+        <table border="0.1" cellpadding="0" cellspacing="0">
+            <caption>字段对应</caption>
+            <thead>
+                <tr>
+                    <th>商品资料</th>
+                    <th>国产玩具</th>
+                    <th>进口玩具</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>商品代码(必填)</td>
+                    <td colspan="2">事业部编码</td>
+                </tr>
+                <tr>
+                    <td>规格代码</td>
+                    <td>条码</td>
+                    <td>条码(现用)</td>
+                </tr>
+                <tr>
+                    <td>规格名称</td>
+                    <td colspan="2">类目</td>
+                </tr>
+                <tr>
+                    <td>商品名称</td>
+                    <td colspan="2">商品名称</td>
+                </tr>
+                <tr>
+                    <td>商品简称</td>
+                    <td colspan="2">店铺商品名称</td>
+                </tr>
+                <tr>
+                    <td>重量</td>
+                    <td colspan="2">重量(kg)</td>
+                </tr>
+                <tr>
+                    <td>标准进价</td>
+                    <td colspan="2">成本价</td>
+                </tr>
+                <tr>
+                    <td>标准售价</td>
+                    <td>市场价</td>
+                    <td>市场价(京东价)</td>
+                </tr>
+                <tr>
+                    <td>成本价</td>
+                    <td colspan="2">成本价</td>
+                </tr>
+                <tr>
+                    <td>类别</td>
+                    <td>国产玩具</td>
+                    <td>进口玩具</td>
+                </tr>
+                <tr>
+                    <td>单位</td>
+                    <td colspan="2">个</td>
+                </tr>
+                <tr>
+                    <td>库存状态</td>
+                    <td colspan="2">正常</td>
+                </tr>
+                <tr>
+                    <td>品牌</td>
+                    <td colspan="2">品牌</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>操作步骤：
+            <ol>
+                <li>对应字段，将每日销售数据表分类别转录为商品资料表，别直接在原表中变更，销售数据表为运营用表</li>
+                <li>清空玩具商品资料.accdb中原有资料</li>
+                <li>将商品资料表分类别导入玩具商品资料.accdb中</li>
+                <li>导出玩具商品资料汇总表</li>
+                <li>在管易云ERP中，操作商品资料导入玩具商品资料汇总表</li>
+                <li>在管易云ERP的任务中心中，查看导入是否成功</li>
+            </ol>
+        </p>
+        <hr />
+        <h3>发货出库</h3>
+        <p>文件位置
+            <ol>
+                <li>D:/坚果云/玩具发货追踪表/1-发货配货单/</li>
+                <li>D:/ERP导入模板/</li>
+            </ol>
+        </p>
+        <p>操作步骤：
+            <ol>
+                <li>运营核对无误后，会变更配货单表名并通知移仓</li>
+                <li>视情况发起移仓：
+                    <ul>
+                        <li>如果不是公司发货，直接在管易云ERP中操作采购入库京东仓即可</li>
+                        <li>如果是公司发货，单元格为白底部分需先在管易云ERP中操作采购入库正品仓</li>
+                        <li>公司发货的单据，在操作完新品采购入库之后，再操作库存调拨，将商品总数由正品仓发往京东仓</li>
+                    </ul>
+                </li>
+                <li>如果移仓失败，检查商品是否存在于资料库中，如不存在，则先更新商品资料再进行移仓操作</li>
+            </ol>
+        </p>
+        <hr />
+        <h3>退货处理</h3>
+        <p>
+            一般情况下是客服收到退货，直接操作库存调拨，由京东仓调回正品仓，个别情况客服检索不到商品，会请求帮助。
+        </p>
+    </body>
+</html>

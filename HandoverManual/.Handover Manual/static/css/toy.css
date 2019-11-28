@@ -1,0 +1,35 @@
+@charset "utf-8";
+/* CSS Document */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Comic Sans MS', 'Microsoft YaHei';
+    background-color: #333333;
+    color: #ffffff;
+    font-size: 18px;
+}
+
+table {
+    margin: auto;
+    text-align: center;
+    background-color: #DDDDDD;
+    color: #333333;
+    min-width: 400px;
+}
+
+caption {
+    color: #dddddd;
+}
+
+thead {
+    font-weight: bold;
+    background-color:#AAAAAA;
+}
+
+h3 {
+    color: #509CCC;
+    text-align: center;
+}

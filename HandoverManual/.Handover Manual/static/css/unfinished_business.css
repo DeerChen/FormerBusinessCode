@@ -1,0 +1,58 @@
+@charset "utf-8"
+/* CSS Document */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #333333;
+    font-size: 20px;
+}
+
+form {
+    width: 430px;
+    text-align: left;
+    color: #96e7e0;
+    margin: 40px auto;
+    line-height: 40px;
+}
+
+#form {
+    font-size: 20px;
+}
+
+p {
+    text-align: center;
+    color: #FF7D7D;
+    font-size: 20px;
+    margin: 15px 0;
+}
+
+table {
+    margin: auto;
+    text-align: center;
+    background-color: #DDDDDD;
+    min-width: 500px;
+}
+
+caption {
+    color: #509CCC;
+    margin: 15px 0;
+}
+
+thead {
+    background-color: #AAAAAA;
+    font-weight: bold;
+}
+
+#content {
+    max-width: 500px;
+    text-align: left;
+}
+
+#level, #delete {
+    width: 50px;
+}

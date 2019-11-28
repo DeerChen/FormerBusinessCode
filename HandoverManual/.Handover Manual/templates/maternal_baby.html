@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>母婴</title>
+        <link type="text/css" rel="stylesheet" href="{{url_for('static', filename='css/maternal_baby.css')}}" />
+    </head>
+    <body>
+        <h3>更新商品资料</h3>
+        <p>文件位置：
+            <ol>
+                <li>D:/母婴/</li>
+                <li>D:/母婴/客服模板/</li>
+                <li>D:/ERP导入模板/</li>
+            </ol>
+        </p>
+        <p>操作步骤：
+            <ol>
+                <li>客服要求添加或纽约入库记录中匹配未找到资料</li>
+                <li>根据字段对应规则，添加资料至母婴商品资料.accdb中</li>
+                <li>选中新添加资料，仅导出选中记录</li>
+                <li>在管易云ERP中操作商品资料，将Access导出记录导入</li>
+                <li>在管易云ERP的任务中心中，查看导入是否成功</li>
+                <li>除辅料外，母婴其余类别都应更新至客服清单模板里的隐藏工作表“商品资料”中，并根据字段对应规则，将末4列字段填充完整</li>
+                <li>将更新完的客服清单模板发送至ERP问题群内供客服下载使用</li>
+            </ol>
+        </p>
+        <table border="0.1" cellpadding="0" cellspacing="0">
+            <caption>字段对应</caption>
+            <thead>
+                <tr>
+                    <th>商品资料</th>
+                    <th>代理</th>
+                    <th>纽约客</th>
+                    <th>辅料</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>商品代码(必填)</td>
+                    <td>由客服提供</td>
+                    <td colspan="2">由纽约提供</td>
+                </tr>
+                <tr>
+                    <td>规格代码</td>
+                    <td colspan="3">与商品代码同</td>
+                </tr>
+                <tr>
+                    <td>规格名称</td>
+                    <td colspan="2">依商品规格定</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>商品名称</td>
+                    <td>由客服提供</td>
+                    <td colspan="2">由纽约提供</td>
+                </tr>
+                <tr>
+                    <td>商品简称</td>
+                    <td colspan="3">与商品名称同</td>
+                </tr>
+                <tr>
+                    <td>重量</td>
+                    <td colspan="2">商品实际重量+0.2kg快递盒重</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>商品条码</td>
+                    <td colspan="2">填写真实条码，与商品代码同</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>类别</td>
+                    <td>代理</td>
+                    <td>纽约客</td>
+                    <td>辅料</td>
+                </tr>
+                <tr>
+                    <td>供应商(名称)</td>
+                    <td colspan="3">纽约</td>
+                </tr>
+                <tr>
+                    <td>单位</td>
+                    <td colspan="2">以商品最小独立装计算</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>库存状态</td>
+                    <td colspan="3">正常</td>
+                </tr>
+                <tr>
+                    <td>原产地</td>
+                    <td colspan="2">英文单位</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>品牌</td>
+                    <td colspan="2">品牌</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>段数</td>
+                    <td colspan="2">依段数规则<sup>[1]</sup>填</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>配方</td>
+                    <td colspan="2">小安素填小安素，其余不填</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>年龄</td>
+                    <td colspan="2">知道段数的填婴幼儿，其余不填</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>英文牌子名称</td>
+                    <td colspan="2">英文品牌</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>英文类别名称</td>
+                    <td colspan="2">英文类目</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>海关定价</td>
+                    <td colspan="2">知道定价填定价，不知道默认填50</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>类目</td>
+                    <td colspan="2">以商品类目填</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>克数<sup>[客服模板用]</sup></td>
+                    <td colspan="2">规格名称依*分列的第一项</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>规格数量<sup>[客服模板用]</sup></td>
+                    <td colspan="2">规格名称依*分列的第二项，没有则填1</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>商品名称(中文)<sup>[客服模板用]</sup></td>
+                    <td colspan="2">依命名规则<sup>[2]</sup>填</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>商品名称(英文)<sup>[客服模板用]</sup></td>
+                    <td colspan="2">英文牌子名称 英文类别名称*</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+        <ol><sup>[1]</sup> 段数规则(优先级依次递减)：
+            <li>小安素填儿童奶粉或儿童液态奶</li>
+            <li>知道段数填段数</li>
+            <li>不知道段数，判断适龄范围，填成人或婴幼儿</li>
+        </ol>
+        <ol><sup>[2]</sup> 命名规则(优先级依次递减)：
+            <li>小安素：英文牌子名称 品牌 配方 段数*</li>
+            <li>段数未知的奶粉和液态奶：英文牌子名称 品牌 段数 类目*</li>
+            <li>已知段数的奶粉和液态奶：英文牌子名称 品牌 年龄 类目 段数*</li>
+            <li>普通商品默认：类目*</li>
+        </ol>
+        <ol>几点提要：
+            <li>客服要求更新的都算代理</li>
+            <li>纽约入库的消耗品属于辅料，商品属于纽约客</li>
+            <li><sup>[客服模板用]</sup>即只出现在客服清单模板里的隐藏工作表“商品资料”中</li>
+        </ol>
+        <hr />
+        <h3>纽约入库记录</h3>
+        <p>文件位置：
+            <ol>
+                <li>D:/母婴/</li>
+                <li>D:/ERP导入模板/</li>
+            </ol>
+        </p>
+        <p>操作步骤：
+            <ol>
+                <li>财务通知邮件发送至邮箱</li>
+                <li>下载财务邮箱中附件表格</li>
+                <li>从母婴商品资料.accdb导出母婴商品资料汇总表</li>
+                <li>Vlookup公式查找纽约入库记录中的商品是否都有资料</li>
+                <li>如果没有资料，先更新商品资料再进行接下来的步骤</li>
+                <li>分日分供应商操作管易云ERP：
+                    <ul>
+                        <li>如果数量为正，操作采购入库导入，辅料进纽约损耗品仓，商品进纽约正品仓</li>
+                        <li>如果数量为负，且为销售订单(单证编号以INV开头)，操作订单查询自定义导入至未发货；店铺：纽约本土批发，仓库：纽约正品仓；要保证会员存在，如果会员不存在，先操作会员信息，添加会员</li>
+                        <li>如果数量为负，非销售订单，则操作退货出库导入，商品出纽约正品仓</li>
+                    </ul>
+                </li>
+                <li>要校对录入的总金额是否与纽约入库记录中一致，如不一致可修改订单</li>
+                <li>录入完毕，通知财务审核</li>
+                <li>销售订单过审之后，还要继续在管易云ERP中操作未配货部分配货-->未财审财审-->未发货强制发货</li>
+            </ol>
+        </p>
+        <hr />
+        <h3>修改客服清单/物流单证模板</h3>
+        <p>文件位置：
+            <ol>
+                <li>D:/母婴/客服模板/</li>
+            </ol>
+        </p>
+        <p>操作步骤：
+            <ol>
+                <li>客服要求修改模板</li>
+                <li>都是Excel公式，按要求修改即可</li>
+                <li>改完发送至ERP问题群内供客服下载使用</li>
+            </ol>
+        </p>
+        <hr />
+        <h3>会员黑名单</h3>
+        <p>操作步骤：
+            <ol>
+                <li>客服提供会员名称，要求添加代理黑名单</li>
+                <li>在管易云ERP中操作会员信息，搜索会员，并勾选黑名单</li>
+            </ol>
+        </p>
+        <hr />
+        <h3>平台铺货</h3>
+        <p>操作步骤：
+            <ol>
+                <li>客服给出链接要求关联</li>
+                <li>如果是多罐装链接，需先在管易云ERP中操作组合商品，再继续接下来的步骤</li>
+                <li>在管易云ERP中操作平台铺货，搜索链接中的商品id，修改关联目标商品即可</li>
+            </ol>
+        </p>
+        <hr />
+        <h3>组合商品</h3>
+        <p>操作步骤：
+            <ol>
+                <li>客服给出多罐装链接要求关联或纽约仓库要求组合多种商品</li>
+                <li>在管易云ERP中操作组合商品，将商品组合成指定规格</li>
+            </ol>
+        </p>
+    </body>
+</html>

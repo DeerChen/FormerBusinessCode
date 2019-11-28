@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>未竟之事</title>
+        <link type="text/css" rel="stylesheet" href="{{url_for('static', filename='css/unfinished_business.css')}}" />
+    </head>
+    <body>
+        <form action="{{url_for('unfinished_business')}}", method="POST">
+            {{writer_form.level.label}}{{writer_form.level}}<br />
+            {{writer_form.contents.label}}<br />
+            {{writer_form.contents(cols=40, rows=10, id="form")}}<br />
+            {{writer_form.submit}}
+        </form>
+        <hr />
+        {% for msg in get_flashed_messages() %}
+            <p>{{ msg }}</p>
+        {% endfor %}
+        <hr />
+        <table border="0.1" cellspacing="0">
+            <caption>记事板</caption>
+            <thead>
+                <tr>
+                    <th>级别</th>
+                    <th>内容</th>
+                    <th>记录时间</th>
+                    <th>完成</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for content in contents %}
+                <tr>
+                    <td id="level">{{content.level}}</td>
+                    <td id="content">{{content.contents}}</td>
+                    <td>{{content.record_time}}</td>
+                    <td id="delete"><a href="{{url_for('delete_event', event_id=content.id)}}">删除</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>ERP基本操作</title>
+		<link type="text/css" rel="stylesheet" href="{{url_for('static', filename='css/operation.css')}}" />
+	</head>
+	<body>
+		<div class="nav">
+			<ul class="nav">
+				<li class="li" id="left"><a onclick="con(0)">首页</a></li>
+				<li class="li" id="right"><a onclick="con(1)">账号</a></li>
+				<li class="li" id="right"><a onclick="con(2)">任务中心</a></li>
+			</ul>
+		</div>
+		<ul class="nav1">
+			<li class="li1">基础信息
+				<ul class="nav2">
+					<li class="li2">用户管理
+						<ul class="nav3">
+							<li class="li3"><a onclick="con(3)">用户信息</a></li>
+							<li class="li3"><a onclick="con(4)">角色信息</a></li>
+						</ul>
+					</li>
+					<li class="li2">店铺管理
+						<ul class="nav3">
+							<li class="li3"><a onclick="con(5)">店铺信息</a></li>
+						</ul>
+					</li>
+					<li class="li2">商品档案
+						<ul class="nav3">
+							<li class="li3"><a onclick="con(6)">商品品牌</a></li>
+						</ul>
+					</li>					
+					<li class="li2">供应商档案
+						<ul class="nav3">
+							<li class="li3"><a onclick="con(7)">供应商信息</a></li>
+						</ul>
+					</li>
+					<li class="li2">仓库管理
+						<ul class="nav3">
+							<li class="li3"><a onclick="con(8)">仓库信息</a></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li class="li1">商品管理
+				<ul class="nav2">
+					<li class="li2">商品管理
+						<ul class="nav3">
+							<li class="li3"><a onclick="con(9)">商品资料</a></li>
+							<li class="li3"><a onclick="con(10)">组合商品</a></li>
+							<li class="li3"><a onclick="con(11)">商品类别</a></li>
+							<li class="li3"><a onclick="con(12)">商品条码</a></li>
+						</ul>
+					</li>
+					<li class="li2">平台铺货
+						<ul class="nav3">
+							<li class="li3"><a onclick="con(13)">平台铺货</a></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li class="li1">会员管理
+				<ul class="nav2">
+					<li class="li2">会员信息
+						<ul class="nav3">
+							<li class="li3"><a onclick="con(14)">会员信息</a></li>
+							<li class="li3"><a onclick="con(15)">会员手机黑名单</a></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li class="li1">采购管理
+				<ul class="nav2">
+					<li class="li2">采购管理
+						<ul class="nav3">
+							<li class="li3"><a onclick="con(16)">采购入库单</a></li>
+							<li class="li3"><a onclick="con(17)">退货出库单</a></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li class="li1">订单管理
+				<ul class="nav2">
+					<li class="li2">订单管理
+						<ul class="nav3">
+							<li class="li3"><a onclick="con(18)">订单查询</a></li>
+							<li class="li3"><a onclick="con(19)">未审核</a></li>
+							<li class="li3"><a onclick="con(20)">未配货</a></li>
+							<li class="li3"><a onclick="con(21)">未财审</a></li>
+							<li class="li3"><a onclick="con(22)">发货单查询</a></li>
+							<li class="li3"><a onclick="con(23)">未发货</a></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li class="li1">库存管理
+				<ul class="nav2">
+					<li class="li2">仓库管理
+						<ul class="nav3">
+							<li class="li3"><a onclick="con(24)">库存调拨单</a></li>
+							<li class="li3"><a onclick="con(25)">库存调整单</a></li>
+							<li class="li3"><a onclick="con(26)">库存盘点单</a></li>
+						</ul>
+					</li>
+					<li class="li2">库存信息
+						<ul class="nav3">
+							<li class="li3"><a onclick="con(27)">库存统计</a></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li class="li1">控制面板
+				<ul class="nav2">
+					<li class="li2">应用授权
+						<ul class="nav3">
+							<li class="li3"><a onclick="con(28)">云ERP授权</a></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li class="li1">报表中心
+				<ul class="nav2">
+					<li class="li2">订单统计
+						<ul class="nav3">
+							<li class="li3"><a onclick="con(29)">发货商品详情</a></li>
+						</ul>
+					</li>
+					<li class="li2">库存统计
+						<ul class="nav3">
+							<li class="li3"><a onclick="con(30)">商品库存跟踪记录(优化)</a></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+		<div class="board">
+			<span id="p0">
+				&#12288;&#12288;<b>特别注意</b>：本帮助页面仅提供<a href="http://guanyierp.com">管易云ERP</a>的部分常用功能注解，更多细节有待探索挖掘。<br />
+				&#12288;&#12288;如果在使用ERP系统过程中，出现任何有困惑的问题，可以在QQ联系上海管易云公司的服务运维：2851398340，或直接致电：021-80300773咨询。<br />
+				<img src="{{url_for('static', filename='img/登录页.png')}}" />
+			</span>
+			<span id="p1">
+				&#12288;&#12288;如果出现用户界面排版没有成功加载CSS样式，需点账户查看一下是否到期，如若到期，手动进行续约，续约成功后，刷新页面即可恢复。<br />
+				<img src="{{url_for('static', filename='img/账户信息.png')}}" />
+			</span>
+			<span id="p2">
+				&#12288;&#12288;用于查看任务处理情况，点击<em>查看结果</em>可以获知任务处理成败详情。<br />
+				<img src="{{url_for('static', filename='img/任务中心.png')}}" /><br />
+				<img src="{{url_for('static', filename='img/任务情况.png')}}" />
+			</span>
+			<span id="p3">
+				&#12288;&#12288;用于用户管理。<br />
+				<ol>
+					<li>默认使用邮箱注册</li>
+					<li>默认<em>用户昵称</em>为本名</li>
+					<li><em>角色</em>记得要分配</li>
+					<li>初始密码和<em>账号</em>相同，<em>密码重置</em>重置为初始密码</li>
+				</ol>
+				<img src="{{url_for('static', filename='img/用户信息.png')}}" /><br />
+				<img src="{{url_for('static', filename='img/新增用户.png')}}" />
+			</span>
+			<span id="p4">
+				&#12288;&#12288;用于权限管理。<br />
+				<ol>
+					<li><em>权限</em>限制用户功能使用</li>
+					<li><em>字段权限</em>限制用户可见表头字段</li>
+					<li><em>数据权限</em>限制用户可见的仓库、店铺等</li>
+				</ol>
+				<img src="{{url_for('static', filename='img/角色信息.png')}}" />
+			</span>
+			<span id="p5">
+				&#12288;&#12288;用于店铺管理，目前暂时只接入了淘宝店铺，其他店铺接入还需补足额外费用。<br />
+				&#12288;&#12288;若要接入店铺，需在新增时正确填写<em>SessionKey</em>，并进行<em>授权</em>操作。<em>验权</em>可以验证<em>SessionKey</em>是否失效。<em>SessionKey</em>由店铺平台方后台提供。<br />
+				<img src="{{url_for('static', filename='img/店铺信息.png')}}" /><br />
+				<img src="{{url_for('static', filename='img/新增店铺.png')}}" />
+			</span>
+			<span id="p6">
+				&#12288;&#12288;在导入<em>商品资料</em>时，如果<em>品牌</em>不存在，则在此新增。默认<em>代码</em>和<em>名称</em>一致即可。<br />
+				<img src="{{url_for('static', filename='img/商品品牌.png')}}" />
+			</span>
+			<span id="p7">
+				&#12288;&#12288;在新增<em>采购入库单</em>或<em>退货出库单</em>时，如果<em>供应商</em>不存在，则在此新增。默认<em>代码</em>和<em>名称</em>一致即可。<br />
+				<img src="{{url_for('static', filename='img/供应商信息.png')}}" />
+			</span>
+			<span id="p8">
+				&#12288;&#12288;用于仓库管理，新增时默认<em>代码</em>和<em>名称</em>一致即可。<br />
+				<img src="{{url_for('static', filename='img/仓库信息.png')}}" />
+			</span>
+			<span id="p9">
+				&#12288;&#12288;用于商品资料管理。<br />
+				&#12288;&#12288;商品资料在本地都有一份Access备份，需要做到云端和本地同步，方便日后匹配操作。<br />
+				&#12288;&#12288;母婴和玩具的字段含义不同，所用导入模板也不同，切记不能混用，其后都有各自的字段对应表给出，如果导入有误，检查模板字段是否出现变动<br />
+				<img src="{{url_for('static', filename='img/商品资料.png')}}" /><br />
+				<img src="{{url_for('static', filename='img/商品资料导入.png')}}" />
+			</span>
+			<span id="p10">
+				&#12288;&#12288;用于商品组合，多罐装或纽约仓库要求把散装品成箱出售的时候会用到。<br />
+				<img src="{{url_for('static', filename='img/组合商品.png')}}" />
+			</span>
+			<span id="p11">
+				&#12288;&#12288;用于类别管理，就是商品资料里的文件夹分类。<br />
+				<img src="{{url_for('static', filename='img/商品类别.png')}}" />
+			</span>
+			<span id="p12">
+				&#12288;&#12288;用于条码管理，因为纽约仓库出货，需要使用扫码枪扫描条码，所以母婴商品的条码在<em>商品导入</em>之时就要记得一并导入。<br />
+				<img src="{{url_for('static', filename='img/商品条码.png')}}" />
+			</span>
+			<span id="p13">
+				&#12288;&#12288;用于系统商品跟淘宝链接相<em>关联</em>，淘宝拍下的订单要绑定管易云ERP系统里的商品，才能够被成功导出。<br />
+				<img src="{{url_for('static', filename='img/平台铺货.png')}}" />
+			</span>
+			<span id="p14">
+				&#12288;&#12288;可以把代理加入黑名单，用于条件筛选，通过会员名称<em>搜索</em>，<em>修改</em>勾选黑名单即可。<br />
+				<img src="{{url_for('static', filename='img/会员信息.png')}}" />
+			</span>
+			<span id="p15">
+				&#12288;&#12288;一般是客服操作。<br />
+				&#12288;&#12288;添加过<em>会员黑名单</em>的会员，客服在<em>审核</em>订单的时候就会弹出提示，知道是代理，就会来这里添加手机黑名单，以免发送<em>营销短信</em>的时候一并发往代理客户。<br />
+				<img src="{{url_for('static', filename='img/会员手机黑名单.png')}}" />
+			</span>
+			<span id="p16">
+				&#12288;&#12288;用于玩具非公司发货的采购入库、服饰补货和母婴纽约入库；只有母婴的<em>入库类型</em>是<em>新品采购</em>。<br />
+				<img src="{{url_for('static', filename='img/采购入库单.png')}}" /><br />
+				<img src="{{url_for('static', filename='img/采购入库导入.png')}}" />
+			</span>
+			<span id="p17">
+				&#12288;&#12288;用于母婴纽约入库的非销售出库和服饰次品出库，<em>其他费用</em>默认为0。<br />
+				<img src="{{url_for('static', filename='img/退货出库单.png')}}" />
+			</span>
+			<span id="p18">
+				&#12288;&#12288;用于母婴纽约入库的销售出库，切记只能操作<em>纽约本土批发</em>店铺，其余店铺由客服操作。<br />
+				&#12288;&#12288;不要直接导入，使用<em>自定义导入</em>，导入到<em>未发货</em>里。<br />
+				<table>
+					<caption>模板必填项</caption>
+					<thead>
+						<tr>
+							<th>字段</th>
+							<th>内容</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>店铺</td>
+							<td>纽约本土批发</td>
+						</tr>
+						<tr>
+							<td>平台单号</td>
+							<td>自己编，别重复就行</td>
+						</tr>
+						<tr>
+							<td>买家会员</td>
+							<td>纽约入库记录中的供应商，不存在需在会员信息中新增</td>
+						</tr>
+						<tr>
+							<td>支付金额</td>
+							<td>数量×价格</td>
+						</tr>
+						<tr>
+							<td>商品代码</td>
+							<td>商品代码</td>
+						</tr>
+						<tr>
+							<td>规格代码</td>
+							<td>与商品代码同</td>
+						</tr>
+						<tr>
+							<td>数量</td>
+							<td>数量</td>
+						</tr>
+						<tr>
+							<td>价格</td>
+							<td>价格</td>
+						</tr>
+						<tr>
+							<td>收货人</td>
+							<td>纽约</td>
+						</tr>
+						<tr>
+							<td>收货地址</td>
+							<td>纽约</td>
+						</tr>
+						<tr>
+							<td>订单创建时间</td>
+							<td>单据时间</td>
+						</tr>
+						<tr>
+							<td>物流公司</td>
+							<td>无需物流</td>
+						</tr>
+						<tr>
+							<td>卖家备注</td>
+							<td>单证编号</td>
+						</tr>
+						<tr>
+							<td>仓库名称</td>
+							<td>纽约正品仓</td>
+						</tr>
+					</tbody>
+				</table><br />
+				<img src="{{url_for('static', filename='img/订单查询.png')}}" /><br />
+				<img src="{{url_for('static', filename='img/订单查询导入.png')}}" />
+			</span>
+			<span id="p19">
+				&#12288;&#12288;<em>订单查询</em>导入进来到<em>未审核</em>中等待审核，审核过后，单据进入<em>未配货</em>。<br />
+				<img src="{{url_for('static', filename='img/未审核.png')}}" />
+			</span>
+			<span id="p20">
+				&#12288;&#12288;纽约本土批发的单据，财务过审完之后，勾选单据，操作<em>部分配货</em>，单据进入<em>未财审</em>。<br />
+				<img src="{{url_for('static', filename='img/未配货.png')}}" />
+			</span>
+			<span id="p21">
+				&#12288;&#12288;这里只能<em>财审</em>纽约本土批发的单据，其余单据千万不要动。属于母婴店铺要发货的是由纽约仓库进行<em>财审</em>或<em>财审驳回</em>操作。财审过后，单据进入<em>未发货</em>。<br />
+				<img src="{{url_for('static', filename='img/未财审.png')}}" />
+			</span>
+			<span id="p22">
+				&#12288;&#12288;如果不小心财审错单了，可以在这里<em>作废</em>单据，作废的单据将返回<em>未配货</em>界面，需重新<em>配货</em>。<br />
+				<img src="{{url_for('static', filename='img/发货单查询.png')}}" />
+			</span>
+			<span id="p23">
+				&#12288;&#12288;这里操作纽约本土批发的单据，直接<em>强制发货</em>即可。<em>搜索</em>时要注意看看<em>物流单打印</em>和<em>发货单打印</em>是否被勾选了。<br />
+				<img src="{{url_for('static', filename='img/未发货.png')}}" />
+			</span>
+			<span id="p24">
+				&#12288;&#12288;最常用的移仓操作，在不同仓库之间进行商品转移。<br />
+				&#12288;&#12288;一般情况下，服饰只需要审核单据，出入库操作交由采购复审时来做。但有时采购无闲暇的情况下，就会要求帮忙代操作。选中过审单据--><em>出库</em>/<em>入库</em>--><em>自动填充数量</em>--><em>出库</em>/<em>入库</em>；要先<em>出库</em>才能<em>入库</em>。<br />
+				<img src="{{url_for('static', filename='img/库存调拨单.png')}}" /><br />
+				<img src="{{url_for('static', filename='img/库存调拨导入.png')}}" />
+			</span>
+			<span id="p25">
+				&#12288;&#12288;用于确保商品价格不变情况下的调整。数量可正可负，正为原有库存基础上加，负为原有库存基础上减。<br />
+				<img src="{{url_for('static', filename='img/库存调整单.png')}}" />
+			</span>
+			<span id="p26">
+				&#12288;&#12288;用于盘点调整，数量只能为正。<em>全部盘点</em>指把仓库库存全部清空，只保留导入记录；而<em>部分盘点</em>只会修改导入记录的<em>库存数</em>，其余不变。<br />
+				<img src="{{url_for('static', filename='img/库存盘点单.png')}}" />
+			</span>
+			<span id="p27">
+				&#12288;&#12288;用于查询各仓库剩余库存数目。通常纽约盘点之前，要导出一份纽约正品仓的库存给仓库校对。<em>可配数</em>和<em>库存数</em>不一致是因为有单据占用，即未进行出入库操作导致的。<br />
+				<img src="{{url_for('static', filename='img/库存统计.png')}}" />
+			</span>
+			<span id="p28">
+				&#12288;&#12288;用于对接管易云ERP的Api接口做二次开发使用。<br />
+				<img src="{{url_for('static', filename='img/云ERP授权.png')}}" />
+			</span>
+			<span id="p29">
+				&#12288;&#12288;客服每日做清单之前都需要在此导出发货商品详情.csv。<br />
+				<img src="{{url_for('static', filename='img/发货商品详情.png')}}" />
+			</span>
+			<span id="p30">
+				&#12288;&#12288;用于跟踪追查商品的进出动向，盘点不对数的时候，可以在此翻阅历史记录。<br />
+				<img src="{{url_for('static', filename='img/商品库存跟踪记录.png')}}" />
+			</span>
+		</div>
+	</body>
+	<script type="text/javascript" src="{{url_for('static', filename='js/operation.js')}}" charset="utf-8"></script>
+</html>

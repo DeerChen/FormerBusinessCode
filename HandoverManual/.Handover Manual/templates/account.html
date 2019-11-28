@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>账号备份</title>
+        <link type="text/css" rel="stylesheet" href="{{url_for('static', filename='css/account.css')}}" />
+        <base target="_blank" />
+	</head>
+	<body>
+        <table rules="all" cellpadding="5">
+            <caption>自用</caption>
+            <thead>
+                <tr>
+                    <th>站点</th>
+                    <th>账号</th>
+                    <th>密码</th>
+                    <th>备注</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>本地</td>
+                    <td>用户名</td>
+                    <td>{{password}}</td>
+                    <td rowspan="2">日常用</td>
+                </tr>
+            </tbody>
+        </table>
+	</body>
+</html>

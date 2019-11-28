@@ -1,0 +1,63 @@
+@charset "utf-8"
+/* CSS Document */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #333333;
+    overflow: hidden;
+}
+
+p {
+    font-family: "Comic Sans MS", "Microsoft YaHei";
+    font-size: 130px;
+    margin: 100px 0 50px 0;
+    text-align: center;
+    letter-spacing: 5px;
+    background-color: #000000;
+    color: transparent;
+    text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.1);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+}
+
+div {
+    height: 400px;
+    width: 470px;
+    margin: 0 auto;
+}
+
+code {
+    color: #bdbdbd;
+    text-align: left;
+    display: block;
+    font-size: 20px;
+    margin: 0 30px 25px;
+}
+
+code span {
+    color: #f0c674;
+}
+
+code i {
+    color: #b5bd68;
+}
+
+code em {
+    color: #b294bb;
+    font-style: unset;
+}
+
+code b {
+    color: #81a2be;
+    font-weight: normal;
+}
+
+code a {
+    color: #8abeb7;
+}

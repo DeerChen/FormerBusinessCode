@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>系统配置</title>
+        <link type="text/css" rel="stylesheet" href="{{url_for('static', filename='css/configuration.css')}}" />
+        <base target="_blank" />
+    </head>
+    <body>
+        <h2>内网部署</h2>
+        <h3>(局域网内可共用)</h3>
+        <ol>
+            <li><a href="http://localhost:1911/">Jupyter服务器</a>：预装有Python和R双内核<br /></li>
+            <li><a href="http://localhost/">Kiftd网盘</a>：存有空白表单模板和自制应用工具，<b>注意</b>：自制应用工具面向过程，容易失效</li>
+        </ol>
+        <hr />
+        <h2>常用目录结构</h2>
+        <div>
+            <div id="catalog">
+                <pre>
+                    D:
+                    ├─ERP导入模板
+                    |     采购入库单.xls
+                    |     订单查询.xlsx
+                    |     库存盘点单.xls
+                    |     库存调拨单.xls
+                    |     库存调整单.xls
+                    |     商品条码.xlsx
+                    |     商品资料.xlsx
+                    |     退货出库单.xls
+                    ├─母婴
+                    |  |  母婴商品资料.accdb
+                    |  └─客服模板
+                    |        客服清单模板.xls
+                    |        圆通单证模板.xls
+                    ├─服饰
+                    |  |  服饰商品资料.accdb
+                    |  ├─男装
+                    |  |  |  男装吊牌.btw
+                    |  |  |  男装条码.btw
+                    |  |  |  男装总表.xlsx
+                    |  |  └─盘点备份
+                    |  └─配饰
+                    |     |  GLO+MAX配饰条码.btw
+                    |     |  配饰条码.xlsx
+                    |     ├─备件库退货
+                    |     |  SKU汇总资料.xls
+                    |     |  备件库退货总清单19年.xlsm
+                    |     └─盘点备份
+                    ├─玩具
+                    |     玩具商品资料.accdb
+                    |     玩具条码.btw
+                    |     玩具条码.xls
+                    ├─坚果云
+                    |  ├─男装sop配货单
+                    |  |  ├─已送货
+                    |  |  └─已送货未移仓
+                    |  ├─配饰补货追踪
+                    |  |  ├─glo补货追踪表
+                    |  |  └─MAXVIVI补货追踪表
+                    |  ├─配饰配货单
+                    |  |  |  内外箱单格式.xlsx
+                    |  |  └─已移仓
+                    |  ├─玩具
+                    |  |  └─0-玩具每日销售数据
+                    |  |        国产玩具每日销售数据.xlsx
+                    |  |        进口玩具每日销售数据.xlsx
+                    |  └─玩具发货追踪表
+                    |     └─1-发货配货单
+                    ├─品检
+                    |     品检生产率统计表.xlsx
+                    ├─Data Integration
+                    ├─Kiftd
+                    ├─MySQL
+                    └─遗留
+                </pre>
+            </div>
+            <div id="note">
+                <ol>
+                    <li>C盘是固态，作为系统盘和软件盘</li>
+                    <li>D盘则作为文件存储盘</li>
+                    <li>“ERP导入模板”中存放的是从管易云ERP上下载下来的模板文件，要注意的是使用模板不能更改原本的数据格式。模板如有变更，可以重新在管易云ERP中对应界面重新下载更新</li>
+                    <li>“母婴”、“服饰”、“玩具”、“品检”依照各自类目所属分别存放文件</li>
+                    <li>商品资料都用的是Access数据库作为存储载体</li>
+                    <li>条码打印是用BarTender制作的标签，如果移动数据来源或btw文件，需注意它的数据来源是否还能够正常获取</li>
+                    <li>“坚果云”中存放的是坚果云的同步文件</li>
+                    <li>如果“坚果云”内已处理过移仓的单据，记得及时移入相应的“已移仓”文件夹中，以免混淆</li>
+                    <li>“遗留”中存放的是重装之前磁盘中的文件</li>
+                    <li>“Data Integration”是开源ETL工具</li>
+                    <li>“Kiftd”是自建开源网盘</li>
+                    <li>“MySQL”是关系型数据库</li>
+                </ol>
+            </div>
+        </div>
+    </body>
+</html>

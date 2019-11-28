@@ -1,0 +1,35 @@
+@charset "utf-8";
+/* CSS Document */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Comic Sans MS', 'Microsoft YaHei';
+    background-color: #333333;
+    color: #dddddd;
+    font-size: 20px;
+    line-height: 25px;
+}
+
+h2, h3 {
+    color: #509CCC;
+    text-align: center;
+}
+
+a:link, a:hover, a:visited, a:active {
+    color: #96e7e0;
+}
+
+#catalog {
+    float: left;
+    font-size: 15px;
+    line-height: 20px;
+}
+
+#note {
+    float: right;
+    position: absolute;
+    margin-left: 500px;
+}

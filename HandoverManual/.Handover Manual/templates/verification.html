@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>验证页面</title>
+        <link type="text/css" rel="stylesheet" href="{{url_for('static', filename='css/verification.css')}}" />
+    </head>
+    <body>
+        <pre>{{'Warning!' | upper}}</pre>
+        <form action="{{url_for('account')}}" method="POST">
+            {{verification_form.password.label}}{{verification_form.password}}<br /><br />
+            {{verification_form.submit}}
+        </form>
+    </body>
+</html>
